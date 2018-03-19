@@ -1,0 +1,10 @@
+{
+  "name": "jsdap",
+  "version": "0.1.0",
+  "description": "JavaScript AJAX client for DAP services",
+  "main": "index.js",
+  "repository": "https://github.com/omarbenhamid/jsdap",
+  "author": "OMAR BENHAMID <http://obenhamid.me>",
+  "license": "MIT",
+  "private": false
+}
