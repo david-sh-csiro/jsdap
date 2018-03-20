@@ -43,14 +43,16 @@ To load a dataset the _loadData_ function can be used this way (`ES6` exampe) :
 Notice that the url **MUST** be a .dods request and that you _CAN_ add additionnaly DAP query.
 
 To only load the dataset (ie. information about the structure of data) :
-import JsDap from './dist/jsdap.js';
-
- # if you want the IE_HACK, set the flag as true
-let jsdap = new JsDap(false);
-jsdap.loadDataset("http://www.example.com/dapserver/mydataset.nc.dds",
-function(info) {
-console.log(info);
-});
+    
+    import JsDap from './dist/jsdap.js';
+     
+    // if you want the IE_HACK, set the flag as true
+    let jsdap = new JsDap(false);
+    
+    jsdap.loadDataset("http://www.example.com/dapserver/mydataset.nc.dds",
+        function(info) {
+            console.log(info);
+        });
 
 Notice that the url **MUST** be a .dds request and you **CANNOT** add additonnal DAP query/
 
