@@ -14,28 +14,27 @@
     // for dds & das
     var das = 'https://curtis-dev.edf-labs.net/data/dods/results/CASE-1004686/dataset.nc';
 
-    var extraHeaders = {'X-SessionId' : '86489a676b73989dda6f2af3a04104a28c8c581b'};
-
-//    function load() {
-//        var url = document.getElementById('url').value;
-//        var url = dods;
-//        var ta = document.getElementById('textarea');
-//        dapClient.loadData(url, function(data) {
-//            ta.value = JSON.stringify(data);
-//        }, extraHeaders);
-//        return false;
-//    }
+    var extraHeaders = {'X-SessionId': '86489a676b73989dda6f2af3a04104a28c8c581b'};
 
     function load() {
         var url = document.getElementById('url').value;
-        var url = das;
+        var url = dods;
         var ta = document.getElementById('textarea');
-        dapClient.loadDataset(url, function(data) {
-            ta.value = JSON.stringify(data);
+        dapClient.loadData(url, function(data) {
+            ta.value = JSON.stringify(data, null, 2);
         }, extraHeaders);
         return false;
     }
 
+    //    function load() {
+    //        var url = document.getElementById('url').value;
+    //        var url = das;
+    //        var ta = document.getElementById('textarea');
+    //        dapClient.loadDataset(url, function(data) {
+    //            ta.value = JSON.stringify(data, null, 2);
+    //        }, extraHeaders);
+    //        return false;
+    //    }
 
 
 </script>
