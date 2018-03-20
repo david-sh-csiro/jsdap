@@ -84,11 +84,10 @@ there you go:
             });
 
         // load dataset
-      	jsdap.loadDataset("http://www.example.com/dapserver/mydataset.nc.dds",
-      		function(info) {
-      			console.log(info);
-      		});
-
+        jsdap.loadDataset("http://www.example.com/dapserver/mydataset.nc.dds",
+            function(info) {
+                console.log(info);
+            });
     </script>
     </body>
     </html>
