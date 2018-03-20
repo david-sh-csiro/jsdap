@@ -1,3 +1,3 @@
-import DapClient from "./lib/jsdap.js";
+import JsDap from "./lib/jsdap.js";
 
-export default DapClient;
+export default JsDap;

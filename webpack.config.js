@@ -39,7 +39,8 @@ module.exports = (env = {}) => {
 
     return {
         mode: mode,
-        entry: "./lib/jsdap.js",
+        // entry: "./lib/jsdap.js",
+        entry: "./index.js",
         devtool: devtool,
         devServer: devServer,
         module: {
@@ -62,8 +63,8 @@ module.exports = (env = {}) => {
             path: path.resolve(__dirname, "./dist"),
             filename: "jsdap.js",
             libraryTarget: "umd",
-            // libraryExport: 'default',
-            library: "jsdap"
+            libraryExport: "default",
+            library: "JsDap"
         }
     };
 };
