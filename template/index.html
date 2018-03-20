@@ -9,14 +9,35 @@
 
     var dapClient = new jsdap.DapClient(false);
 
+    // for dods request
+    var dods = "https://curtis-dev.edf-labs.net/data/dods/results/CASE-1004686/dataset.nc.dods?PID-WindTurbine,TIMESCALE-1_turbine_step,/Results/WindTurbine/Turbine_Type";
+    // for dds & das
+    var das = 'https://curtis-dev.edf-labs.net/data/dods/results/CASE-1004686/dataset.nc';
+
+    var extraHeaders = {'X-SessionId' : '86489a676b73989dda6f2af3a04104a28c8c581b'};
+
+//    function load() {
+//        var url = document.getElementById('url').value;
+//        var url = dods;
+//        var ta = document.getElementById('textarea');
+//        dapClient.loadData(url, function(data) {
+//            ta.value = JSON.stringify(data);
+//        }, extraHeaders);
+//        return false;
+//    }
+
     function load() {
         var url = document.getElementById('url').value;
+        var url = das;
         var ta = document.getElementById('textarea');
         dapClient.loadDataset(url, function(data) {
             ta.value = JSON.stringify(data);
-        });
+        }, extraHeaders);
         return false;
     }
+
+
+
 </script>
 <form method="GET" action="#">
     <input type="text" id="url" size="128" value="" placeholder="DODS URL"/>

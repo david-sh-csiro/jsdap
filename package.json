@@ -25,6 +25,6 @@
     "lint": "eslint --format table --debug ./",
     "lint:fix": "eslint --format table --debug --fix ./",
     "serve": "webpack-dev-server --open --progress",
-    "build": "webpack --env.production --progress"
+    "build": "webpack --env.production --progress && cp dist/jsdap.js test/"
   }
 }
