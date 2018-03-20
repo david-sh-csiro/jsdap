@@ -14,27 +14,27 @@ module.exports = (env = {}) => {
     let devServer = env.production
         ? undefined
         : {
-            contentBase: "./dist",
-            hot: true
-        };
+              contentBase: "./dist",
+              hot: true
+          };
 
     let plugins = [
         new CleanWebpackPlugin(["dist"], {verbose: true}),
         new HtmlWebpackPlugin({
             title: "Output Management",
             filename: "index.html",
-            inject: 'head',
-            template: './template/index.html'
+            inject: "head",
+            template: "./template/index.html"
         })
     ];
 
     plugins = env.production
         ? plugins.concat([
-            new UglifyJSPlugin({sourceMap: true}),
-            new webpack.DefinePlugin({
-                "process.env.NODE_ENV": JSON.stringify("production")
-            })
-        ])
+              new UglifyJSPlugin({sourceMap: true}),
+              new webpack.DefinePlugin({
+                  "process.env.NODE_ENV": JSON.stringify("production")
+              })
+          ])
         : plugins.concat([new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()]);
 
     return {
@@ -59,11 +59,11 @@ module.exports = (env = {}) => {
         },
         plugins: plugins,
         output: {
-            path: path.resolve(__dirname, './dist'),
-            filename: 'jsdap.js',
-            libraryTarget: 'umd',
+            path: path.resolve(__dirname, "./dist"),
+            filename: "jsdap.js",
+            libraryTarget: "umd",
             // libraryExport: 'default',
-            library: 'jsdap'
+            library: "jsdap"
         }
     };
 };
