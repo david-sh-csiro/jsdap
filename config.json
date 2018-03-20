@@ -1,0 +1,4 @@
+{
+  "dods": "https://curtis-dev.edf-labs.net/data/dods/results/CASE-1005841/dataset.nc.dods?PID-WindTurbine,TIMESCALE-1_turbine_step,/Results/WindTurbine/Turbine_Type",
+  "dds": "https://curtis-dev.edf-labs.net/data/dods/results/CASE-1005841/dataset.nc"
+}
