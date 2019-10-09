@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenDap</title>
+    <style type="text/css">
+        form {
+            margin: 20px 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+<script type="text/javascript" src="jsdap.js"></script></head>
+<body>
+<script>
+    // disable IE_HACK as default
+    var jsdap = new JsDap(false);
+
+    // if you want IE_HACK, just set the flag as true during initialize
+    // var jsdap = new JsDap(true);
+
+    function loadData() {
+        var url = document.getElementById('dods_url').value;
+        var ta = document.getElementById('dods_textarea');
+        jsdap.loadData(url, function(data) {
+            ta.value = JSON.stringify(data, null, 2);
+        });
+        return false;
+    }
+
+    function loadDataset() {
+        var url = document.getElementById('dds_url').value;
+        var ta = document.getElementById('dds_textarea');
+        jsdap.loadDataset(url, function(data) {
+            ta.value = JSON.stringify(data, null, 2);
+        });
+        return false;
+    }
+
+
+</script>
+<form method="GET" action="#">
+    <input type="text" id="dods_url" size="128" value=""
+           placeholder="DODS URL (e.g. http://www.example.com/dapserver/mydataset.nc.dods?time[1][1:5])"/>
+    <input type="button" value="load DODS URL" onclick="loadData()"/>
+    <textarea id="dods_textarea" style="width: 100%; height: 400px;"></textarea>
+</form>
+
+<form method="GET" action="#">
+    <input type="text" id="dds_url" size="128" value=""
+           placeholder="DDS URL (e.g. http://www.example.com/dapserver/mydataset.nc)"/>
+    <input type="button" value="load DDS URL" onclick="loadDataset()"/>
+    <textarea id="dds_textarea" style="width: 100%; height: 400px;"></textarea>
+</form>
+</body>
+</html>
