@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenDap</title>
+    <style type="text/css">
+        form {
+            margin: 20px 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script type="module" src="./app.js"></script>
+</head>
+<body>
+
+<form method="GET" action="#">
+    <input type="text" id="dods_url" size="128" value=""
+           placeholder="DODS URL (e.g. http://www.example.com/dapserver/mydataset.nc.dods?time[1][1:5])"/>
+    <input id="dods_button" type="button" value="load DODS URL" />
+    <textarea id="dods_textarea" style="width: 100%; height: 400px;"></textarea>
+</form>
+
+<form method="GET" action="#">
+    <input type="text" id="dds_url" size="128" value=""
+           placeholder="DDS URL (e.g. http://www.example.com/dapserver/mydataset.nc)"/>
+    <input id="dds_button" type="button" value="load DDS URL" />
+    <textarea id="dds_textarea" style="width: 100%; height: 400px;"></textarea>
+</form>
+</body>
+</html>
