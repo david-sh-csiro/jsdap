@@ -107,6 +107,20 @@ there you go:
     </body>
     </html>
 
+## Build
+
+```shell
+npm install
+npm run build
+```
+
+## Development
+
+Runs the demo website with dynamic reloading when changing source files.
+
+```shell
+npm run dev
+
 ## Troubleshooting
 
 1.  Your requests fail ? Careful about **cross domain requests**
