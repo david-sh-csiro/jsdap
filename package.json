@@ -2,29 +2,36 @@
     "name": "jsdap",
     "version": "0.1.1",
     "description": "JavaScript AJAX client for DAP services",
-    "main": "index.js",
     "repository": "https://github.com/omarbenhamid/jsdap",
     "author": "OMAR BENHAMID <http://obenhamid.me>",
     "license": "MIT",
     "private": false,
-    "devDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.4",
-        "babel-preset-env": "^1.6.1",
-        "clean-webpack-plugin": "^0.1.19",
-        "eslint": "^4.19.0",
-        "eslint-plugin-prettier": "^2.6.0",
-        "html-webpack-plugin": "^3.0.7",
-        "prettier": "^1.11.1",
-        "uglifyjs-webpack-plugin": "^1.2.4",
-        "webpack": "4.1.1",
-        "webpack-cli": "^2.0.12",
-        "webpack-dev-server": "^3.1.1"
-    },
     "scripts": {
-        "lint": "./node_modules/eslint/bin/eslint.js --format table --debug ./",
-        "lint:fix": "./node_modules/eslint/bin/eslint.js --format table --debug --fix ./",
-        "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --open --progress",
-        "build": "./node_modules/webpack/bin/webpack.js --env.production --progress"
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+      },
+    "type": "module",
+    "files": ["dist"],
+    "main": "./dist/jsdap.cjs",
+    "module": "./dist/jsdap.js",
+    "exports": {
+        ".": {
+        "import": "./dist/jsdap.js",
+        "require": "./dist/jsdap.umd.cjs"
+        }
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "eslint": "^9.17.0",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.16",
+        "globals": "^15.14.0",
+        "typescript": "~5.6.2",
+        "typescript-eslint": "^8.18.2",
+        "vite": "^6.0.5"
     }
 }
